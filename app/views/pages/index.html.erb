@@ -1,7 +1,8 @@
 <h1>Welcome!</h1>
 
 <% if session[:access_token] %>
-  <%= link_to 'Get User', "http://localhost:3000/api/v1/patient/data?access_token=#{session[:access_token]}" %>
+  <h3> Local Date is: <%= @local_date %> </h1>
+  <%= link_to 'Get Glooko Code', "http://localhost:3000/api/v2/patient/get_glooko_code?access_token=#{session[:access_token]}" %>
 <% else %>
   <%= link_to 'Authorize via Glooko', new_oauth_token_path %>
 <% end %>
